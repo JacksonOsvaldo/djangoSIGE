@@ -44,7 +44,7 @@ $.Admin.barraLateral = {
             }
 
             $this.toggleClass('toggled');
-            $content.slideToggle(320);
+            $content.slideToggle(520);
         });
 
         //Popups
@@ -89,14 +89,16 @@ $.Admin.barraLateral = {
                 $(this).removeClass('no-animate').dequeue();
             });
         }
-        if (width < 1170) {
+        if (width > 1170) {
             $body.addClass('ls-closed');
             $openCloseBar.fadeIn();
         }
         else {
-            $body.removeClass('ls-closed');
-            $openCloseBar.fadeOut();
-        }
+            // $body.removeClass('ls-closed');
+            // $openCloseBar.fadeOut()
+            $body.addClass('ls-closed');
+            $openCloseBar.fadeIn();
+           }
     },
     isOpen: function () {
         return $('body').hasClass('overlay-open');
